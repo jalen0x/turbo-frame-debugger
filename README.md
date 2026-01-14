@@ -95,36 +95,12 @@ turbo-frame-debugger/
 - ✅ Brave (latest)
 - ✅ Any Chromium-based browser supporting Manifest V3
 
-## Development
-
-### Regenerating Icons
-
-```bash
-cd icons
-magick source.png -resize 16x16 icon16.png
-magick source.png -resize 32x32 icon32.png
-magick source.png -resize 48x48 icon48.png
-magick source.png -resize 128x128 icon128.png
-```
-
-### Testing Changes
-
-1. Make your changes
-2. Go to `chrome://extensions/`
-3. Click the reload button (🔄) on the extension card
-4. Test on a page with Turbo Frames
-
 ## Troubleshooting
 
-### Debug borders not showing
-
+**Debug borders not showing?**
 - Make sure the toggle is ON in the popup
-- Check that the page has `<turbo-frame>` elements
-- Try reloading the page once after enabling
-
-### Cannot debug certain pages
-
-The extension cannot run on `chrome://` pages or other browser internal pages.
+- Verify the page has `<turbo-frame>` elements
+- Try reloading the page after enabling
 
 ## Contributing
 
