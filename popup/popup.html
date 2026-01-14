@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turbo Frame Debugger</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Turbo Frame Debugger</h1>
+    </header>
+
+    <main>
+      <div class="control-group">
+        <label class="toggle-label">
+          <input type="checkbox" id="debugToggle">
+          <span class="toggle-text">Enable debug mode</span>
+        </label>
+      </div>
+
+      <div class="description">
+        <p>Shows red borders around all Turbo Frames with their attributes (id, src, loading, target).</p>
+      </div>
+
+      <div class="status" id="stats">
+        <span class="status-text">Debug mode disabled</span>
+      </div>
+    </main>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

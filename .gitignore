@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Build artifacts
+*.zip
+dist/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Source images (keep only final icons)
+icons/source.png
+icons/image.png

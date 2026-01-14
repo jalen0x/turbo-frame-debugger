@@ -1,0 +1,33 @@
+/* Turbo Frame Debug Styles */
+:root[data-turbo-frame-debug="1"] turbo-frame {
+  border: 1px dashed red !important;
+  display: block !important;
+  position: relative !important;
+}
+
+:root[data-turbo-frame-debug="1"] turbo-frame::before {
+  content: "Frame #" attr(id) " src=" attr(src) " loading=" attr(loading) " target=" attr(target) !important;
+  font-size: 0.75rem !important;
+  padding: 0.25rem 0.5rem !important;
+  border: 1px dashed red !important;
+  background: white !important;
+  color: black !important;
+  display: inline-block !important;
+  font-family: monospace !important;
+  line-height: 1.2 !important;
+  z-index: 9999 !important;
+  position: relative !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  max-width: 100% !important;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root[data-turbo-frame-debug="1"] turbo-frame::before {
+    background: #1a1a1a !important;
+    color: #00ff00 !important;
+    border-color: #ff0000 !important;
+  }
+}
