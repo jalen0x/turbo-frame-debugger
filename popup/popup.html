@@ -14,18 +14,13 @@
 
     <main>
       <div class="control-group">
-        <label class="toggle-label">
-          <input type="checkbox" id="debugToggle">
-          <span class="toggle-text">Enable debug mode</span>
+        <label class="toggle-label" id="toggleLabel">
+          <span class="toggle-text">Debug Mode</span>
+          <div class="toggle-switch">
+            <input type="checkbox" id="debugToggle">
+            <span class="slider"></span>
+          </div>
         </label>
-      </div>
-
-      <div class="description">
-        <p>Shows red borders around all Turbo Frames with their attributes (id, src, loading, target).</p>
-      </div>
-
-      <div class="status" id="stats">
-        <span class="status-text">Debug mode disabled</span>
       </div>
     </main>
   </div>

@@ -1,9 +1,23 @@
 const debugToggle = document.getElementById('debugToggle');
-const statsDiv = document.getElementById('stats');
+const toggleLabel = document.getElementById('toggleLabel');
 
 async function getCurrentTab() {
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   return tab;
+}
+
+function updateTooltip(text) {
+  const existingTooltip = toggleLabel.querySelector('.tooltip');
+  if (existingTooltip) {
+    existingTooltip.remove();
+  }
+  
+  if (text) {
+    const tooltip = document.createElement('div');
+    tooltip.className = 'tooltip';
+    tooltip.textContent = text;
+    toggleLabel.appendChild(tooltip);
+  }
 }
 
 async function init() {
@@ -32,29 +46,17 @@ debugToggle.addEventListener('change', async function() {
 async function updateStats() {
   const tab = await getCurrentTab();
   
-  if (!tab.url || tab.url.startsWith('chrome://')) {
-    statsDiv.classList.remove('active');
-    statsDiv.innerHTML = '<p class="stats-text">Cannot debug this page</p>';
+  if (!tab.url || tab.url.startsWith('chrome://') || tab.url.startsWith('chrome-extension://')) {
+    debugToggle.disabled = true;
+    debugToggle.checked = false;
+    toggleLabel.classList.add('disabled');
+    updateTooltip('Cannot debug browser internal pages');
     return;
   }
   
-  if (debugToggle.checked) {
-    try {
-      const results = await chrome.scripting.executeScript({
-        target: { tabId: tab.id },
-        func: () => document.querySelectorAll('turbo-frame').length
-      });
-      const count = results[0]?.result || 0;
-      statsDiv.classList.add('active');
-      statsDiv.innerHTML = `<p class="stats-text">✓ Found ${count} Turbo Frame(s)</p>`;
-    } catch (e) {
-      statsDiv.classList.add('active');
-      statsDiv.innerHTML = '<p class="stats-text">✓ Debug enabled (reload to apply)</p>';
-    }
-  } else {
-    statsDiv.classList.remove('active');
-    statsDiv.innerHTML = '<p class="stats-text">Debug mode disabled</p>';
-  }
+  debugToggle.disabled = false;
+  toggleLabel.classList.remove('disabled');
+  updateTooltip(null);
 }
 
 init();
