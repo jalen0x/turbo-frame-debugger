@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1280px;
+      height: 800px;
+      background: linear-gradient(135deg, #CC0000 0%, #8B0000 100%);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      display: flex;
+      padding: 80px;
+      color: white;
+      overflow: hidden;
+    }
+    .left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-right: 60px;
+    }
+    .icon {
+      width: 96px;
+      height: 96px;
+      margin-bottom: 32px;
+    }
+    .icon img {
+      width: 100%;
+      height: 100%;
+      border-radius: 24px;
+    }
+    h1 {
+      font-size: 64px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+    .tagline {
+      font-size: 28px;
+      opacity: 0.95;
+      margin-bottom: 40px;
+      line-height: 1.4;
+    }
+    .features {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .feature-item {
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .feature-item::before {
+      content: '✓';
+      width: 32px;
+      height: 32px;
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-weight: bold;
+    }
+    .right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .demo-browser {
+      width: 560px;
+      height: 640px;
+      background: #F9FAFB;
+      border-radius: 12px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .demo-header {
+      background: #E5E7EB;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .demo-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #9CA3AF;
+    }
+    .demo-content {
+      flex: 1;
+      padding: 32px;
+      background: white;
+    }
+    .demo-frame {
+      border: 3px dashed #DC2626;
+      border-radius: 8px;
+      padding: 20px;
+      background: #FEF2F2;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .demo-label {
+      position: absolute;
+      top: -14px;
+      left: 16px;
+      background: #DC2626;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-family: 'Monaco', 'Menlo', monospace;
+      font-weight: 600;
+    }
+    .demo-text {
+      color: #6B7280;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="left">
+    <div class="icon"><img src="icon128.png" alt="Turbo Frame Debugger"></div>
+    <h1>Turbo Frame<br>Debugger</h1>
+    <div class="tagline">Visualize Hotwire Turbo Frames<br>with ease</div>
+    <div class="features">
+      <div class="feature-item">Red borders around frames</div>
+      <div class="feature-item">Display frame attributes</div>
+      <div class="feature-item">Real-time detection</div>
+      <div class="feature-item">Dark mode support</div>
+    </div>
+  </div>
+  <div class="right">
+    <div class="demo-browser">
+      <div class="demo-header">
+        <div class="demo-dot"></div>
+        <div class="demo-dot"></div>
+        <div class="demo-dot"></div>
+      </div>
+      <div class="demo-content">
+        <div class="demo-frame">
+          <div class="demo-label">Frame #editor src=/editor</div>
+          <div class="demo-text">Edit your content here...</div>
+        </div>
+        <div class="demo-frame">
+          <div class="demo-label">Frame #songs src=/songs</div>
+          <div class="demo-text">Loading song list...</div>
+        </div>
+        <div class="demo-frame">
+          <div class="demo-label">Frame #modal loading=lazy</div>
+          <div class="demo-text">Modal content placeholder</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

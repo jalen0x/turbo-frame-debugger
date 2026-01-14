@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1400px;
+      height: 560px;
+      background: linear-gradient(135deg, #CC0000 0%, #8B0000 100%);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      display: flex;
+      padding: 60px 80px;
+      color: white;
+      overflow: hidden;
+    }
+    .left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .icon {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 24px;
+    }
+    .icon img {
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+    }
+    h1 {
+      font-size: 56px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+    .tagline {
+      font-size: 24px;
+      opacity: 0.95;
+      margin-bottom: 32px;
+    }
+    .features {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .feature-item {
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .feature-item::before {
+      content: '✓';
+      width: 28px;
+      height: 28px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .demo-box {
+      width: 480px;
+      height: 360px;
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+    .demo-frame {
+      border: 3px dashed #DC2626;
+      border-radius: 8px;
+      padding: 16px;
+      background: #FEE2E2;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .demo-label {
+      position: absolute;
+      top: -12px;
+      left: 12px;
+      background: #DC2626;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-family: monospace;
+    }
+    .demo-content {
+      color: #666;
+      font-size: 14px;
+      padding: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="left">
+    <div class="icon"><img src="icon128.png" alt="Turbo Frame Debugger"></div>
+    <h1>Turbo Frame<br>Debugger</h1>
+    <div class="tagline">Debug Hotwire Turbo Frames visually</div>
+    <div class="features">
+      <div class="feature-item">Visual red borders around all frames</div>
+      <div class="feature-item">Display frame attributes instantly</div>
+      <div class="feature-item">Real-time mutation detection</div>
+      <div class="feature-item">Dark mode support included</div>
+    </div>
+  </div>
+  <div class="right">
+    <div class="demo-box">
+      <div class="demo-frame">
+        <div class="demo-label">Frame #editor src=/editor</div>
+        <div class="demo-content">Turbo Frame content here</div>
+      </div>
+      <div class="demo-frame">
+        <div class="demo-label">Frame #modal loading=lazy</div>
+        <div class="demo-content">Another frame example</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
